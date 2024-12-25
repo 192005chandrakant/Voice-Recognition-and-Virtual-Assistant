@@ -10,7 +10,7 @@ import os
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-newsapi = "130daf12f48e4f34ab7729c4bb839147"
+newsapi = "API_KEY"   # Replace with your actual API key
 def speak_old(text):
     engine.say(text)
     engine.runAndWait()
@@ -36,7 +36,7 @@ def speak(text):
 
     
 def aiProcess(command):
-   genai.configure(api_key="AIzaSyBvuUMOlJ13MhAueiG3dbIbod1TeMcRaZA")  # Replace with your actual API key
+   genai.configure(api_key="API_KEY")  # Replace with your actual API key
    model = genai.GenerativeModel("gemini-1.5-flash")
    response = model.generate_content(f"You are a virtual assistant named Jarvis skilled in general tasks like Alexa and Google Cloud.  {command}")
    return   response.text
